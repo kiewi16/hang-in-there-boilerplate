@@ -192,7 +192,11 @@ function showMyPoster() {
   posterTitle.innerText = titleInput.value
   posterQuote.innerText = quoteInput.value
   createPoster(imageInput.value, titleInput.value, quoteInput.value)
+  images.push(imageInput.value)
+  titles.push(titleInput.value)
+  quotes.push(quoteInput.value)
   backToMain()
   event.preventDefault()
 }
+
 // element.classList.contains('hidden')
