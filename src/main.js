@@ -125,8 +125,8 @@ var currentPoster;
 showRandomButton.addEventListener('click', randomizePoster)
 savePosterButton.addEventListener('click', savePoster)
 makePosterButton.addEventListener('click', showMyPoster)
-showSavedButton.addEventListener('click', showSavedPosters)
-showFormButton.addEventListener('click', showPosterCreation)
+showSavedButton.addEventListener('click', revealSavedPosters)
+showFormButton.addEventListener('click', revealPosterCreation)
 nevermindBackButton.addEventListener('click', backToMain)
 backToMainButton.addEventListener('click', backToMain)
 
@@ -170,13 +170,13 @@ function savePoster() {
 
 }
 
-function showSavedPosters() {
+function revealSavedPosters() {
   mainPoster.classList.add('hidden')
 
   savedPosterSection.classList.remove('hidden')
 }
 
-function showPosterCreation() {
+function revealPosterCreation() {
   // poster.classList.add('hidden')
   mainPoster.classList.add('hidden')
   
