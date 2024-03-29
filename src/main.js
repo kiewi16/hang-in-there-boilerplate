@@ -112,6 +112,9 @@ var currentPoster;
 // event listeners go here 👇
 
 showRandomButton.addEventListener('click', getRandomContent)
+savePosterButton.addEventListener('click', savePoster)
+showSavedButton.addEventListener('click', showSavedPosters)
+showFormButton.addEventListener('click', showPosterCreation)
 
 
 // functions and event handlers go here 👇
@@ -142,3 +145,18 @@ function getRandomContent() {
 }
 
 getRandomContent(); 
+
+function savePoster() {
+
+
+}
+
+function showSavedPosters() {
+
+
+}
+
+function showPosterCreation() {
+
+
+}
