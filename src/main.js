@@ -122,7 +122,7 @@ var currentPoster;
 
 // event listeners go here 👇
 
-showRandomButton.addEventListener('click', makeRandomPoster)
+showRandomButton.addEventListener('click', randomizePoster)
 savePosterButton.addEventListener('click', savePoster)
 makePosterButton.addEventListener('click', showMyPoster)
 showSavedButton.addEventListener('click', showSavedPosters)
@@ -145,7 +145,7 @@ function createPoster(imageURL, title, quote) {
     quote: quote}
 }
 
-function makeRandomPoster() {
+function randomizePoster() {
   var imageIndex = getRandomIndex(images);
   var randomImage = images[imageIndex];
   var titleIndex = getRandomIndex(titles);
@@ -158,7 +158,7 @@ function makeRandomPoster() {
   posterQuote.innerText = randomQuote; 
 }
 
-makeRandomPoster(); 
+randomizePoster(); 
 
 function backToMain() {
   mainPoster.classList.remove('hidden')
