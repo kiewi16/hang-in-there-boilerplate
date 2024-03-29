@@ -3,6 +3,10 @@ var posterImage = document.querySelector('.poster-img')
 var posterTitle = document.querySelector('.poster-title')
 var posterQuote = document.querySelector('.poster-quote') 
 var showRandomButton = document.querySelector('.show-random')
+var savePosterButton = document.querySelector('.save-poster')
+var showSavedButton = document.querySelector('.show-saved')
+var showFormButton = document.querySelector('.show-form')
+
 
 // we've provided you with some data to work with 👇
 var images = [
