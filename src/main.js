@@ -14,9 +14,9 @@ var savedPosterSection = document.querySelector('.saved-posters')
 var nevermindBackButton = document.querySelector('.show-main')
 var backToMainButton = document.querySelector('.back-to-main')
 
-var imageInput = document.querySelector('poster-image-url')
-var titleInput = document.querySelector('poster-title')
-var quoteInput = document.querySelector('poster-quote')
+var imageInput = document.querySelector('#poster-image-url')
+var titleInput = document.querySelector('#poster-title')
+var quoteInput = document.querySelector('#poster-quote')
 
 
 // we've provided you with some data to work with 👇
@@ -124,7 +124,7 @@ var currentPoster;
 
 showRandomButton.addEventListener('click', makeRandomPoster)
 savePosterButton.addEventListener('click', savePoster)
-makePosterButton.addEventListener('click', savePoster)
+makePosterButton.addEventListener('click', showMyPoster)
 showSavedButton.addEventListener('click', showSavedPosters)
 showFormButton.addEventListener('click', showPosterCreation)
 nevermindBackButton.addEventListener('click', backToMain)
@@ -167,9 +167,7 @@ function backToMain() {
 }
 
 function savePoster() {
-  posterImage.src = input.value;
-  posterTitle.innerText = input.value;
-  posterQuote.innerText = input.value; 
+
 }
 
 function showSavedPosters() {
@@ -190,5 +188,11 @@ function showMyPoster() {
   // createPoster(imageURL, title, quote)
   // posterImage.src = imageURL
   
+  posterImage.src = imageInput.value
+  posterTitle.innerText = titleInput.value
+  posterQuote.innerText = quoteInput.value
+  createPoster(imageInput.value, titleInput.value, quoteInput.value)
+  backToMain()
+  event.preventDefault()
 }
 // element.classList.contains('hidden')
