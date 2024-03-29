@@ -6,6 +6,7 @@ var showRandomButton = document.querySelector('.show-random')
 var savePosterButton = document.querySelector('.save-poster')
 var showSavedButton = document.querySelector('.show-saved')
 var showFormButton = document.querySelector('.show-form')
+var makePosterButton = document.querySelector('.make-poster')
 // var poster = document.querySelector('.poster')
 var mainPoster = document.querySelector('.main-poster')
 var form = document.querySelector('.poster-form')
@@ -161,7 +162,7 @@ function backToMain() {
 }
 
 function savePoster() {
-
+ 
 }
 
 function showSavedPosters() {
