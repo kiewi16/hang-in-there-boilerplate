@@ -6,10 +6,12 @@ var showRandomButton = document.querySelector('.show-random')
 var savePosterButton = document.querySelector('.save-poster')
 var showSavedButton = document.querySelector('.show-saved')
 var showFormButton = document.querySelector('.show-form')
-var poster = document.querySelector('.poster')
+// var poster = document.querySelector('.poster')
 var mainPoster = document.querySelector('.main-poster')
 var form = document.querySelector('.poster-form')
-
+var savedPosterSection = document.querySelector('.saved-posters')
+var nevermindBackButton = document.querySelector('.show-main')
+var backToMainButton = document.querySelector('.back-to-main')
 
 
 // we've provided you with some data to work with 👇
@@ -119,7 +121,8 @@ showRandomButton.addEventListener('click', getRandomContent)
 savePosterButton.addEventListener('click', savePoster)
 showSavedButton.addEventListener('click', showSavedPosters)
 showFormButton.addEventListener('click', showPosterCreation)
-
+nevermindBackButton.addEventListener('click', backToMain)
+backToMainButton.addEventListener('click', backToMain)
 
 
 // functions and event handlers go here 👇
@@ -151,6 +154,12 @@ function getRandomContent() {
 
 getRandomContent(); 
 
+function backToMain() {
+  mainPoster.classList.remove('hidden')
+  form.classList.add('hidden')
+  savedPosterSection.classList.add('hidden')
+}
+
 function savePoster() {
 
 }
@@ -162,10 +171,7 @@ function showSavedPosters() {
 function showPosterCreation() {
   // poster.classList.add('hidden')
   mainPoster.classList.add('hidden')
-  // showRandomButton.classList.add('hidden')
-  // savePosterButton.classList.add('hidden')
-  // showSavedButton.classList.add('hidden')
-  // showFormButton.classList.add('hidden')
+  
   form.classList.remove('hidden')
   
 }
