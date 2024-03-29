@@ -193,14 +193,27 @@ function storeInArray() {
 function showMyPoster() {
   // createPoster(imageURL, title, quote)
   // posterImage.src = imageURL
+  newPoster = createPoster(imageInput.value, titleInput.value, quoteInput.value)
+  posterImage.src = newPoster.imageURL
+  posterTitle.innerText = newPoster.title
+  posterQuote.innerText = newPoster.quote
   
-  posterImage.src = imageInput.value
-  posterTitle.innerText = titleInput.value
-  posterQuote.innerText = quoteInput.value
-  createPoster(imageInput.value, titleInput.value, quoteInput.value)
   storeInArray()
   backToMain()
   event.preventDefault()
 }
+
+// function showMyPoster() {
+//   // createPoster(imageURL, title, quote)
+//   // posterImage.src = imageURL
+  
+//   posterImage.src = imageInput.value
+//   posterTitle.innerText = titleInput.value
+//   posterQuote.innerText = quoteInput.value
+//   createPoster(imageInput.value, titleInput.value, quoteInput.value)
+//   storeInArray()
+//   backToMain()
+//   event.preventDefault()
+// }
 
 // element.classList.contains('hidden')
