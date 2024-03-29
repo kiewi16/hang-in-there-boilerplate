@@ -165,7 +165,9 @@ function savePoster() {
 }
 
 function showSavedPosters() {
+  mainPoster.classList.add('hidden')
 
+  savedPosterSection.classList.remove('hidden')
 }
 
 function showPosterCreation() {
