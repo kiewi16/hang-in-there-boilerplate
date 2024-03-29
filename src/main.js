@@ -184,6 +184,12 @@ function showPosterCreation() {
   
 }
 
+function storeInArray() {
+  images.push(imageInput.value)
+  titles.push(titleInput.value)
+  quotes.push(quoteInput.value)
+}
+
 function showMyPoster() {
   // createPoster(imageURL, title, quote)
   // posterImage.src = imageURL
@@ -192,9 +198,7 @@ function showMyPoster() {
   posterTitle.innerText = titleInput.value
   posterQuote.innerText = quoteInput.value
   createPoster(imageInput.value, titleInput.value, quoteInput.value)
-  images.push(imageInput.value)
-  titles.push(titleInput.value)
-  quotes.push(quoteInput.value)
+  storeInArray()
   backToMain()
   event.preventDefault()
 }
