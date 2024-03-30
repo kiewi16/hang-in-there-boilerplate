@@ -166,39 +166,38 @@ function backToMain() {
   savedPosterSection.classList.add('hidden')
 }
 
+// make this function check for duplicates
 function savePoster() {
-
+  storeInArray(currentPoster.imageURL, currentPoster.title, currentPoster.quote)
 }
 
 function revealSavedPosters() {
   mainPoster.classList.add('hidden')
-
   savedPosterSection.classList.remove('hidden')
 }
 
 function revealPosterCreation() {
   // poster.classList.add('hidden')
   mainPoster.classList.add('hidden')
-  
   form.classList.remove('hidden')
   
 }
 
-function storeInArray() {
-  images.push(imageInput.value)
-  titles.push(titleInput.value)
-  quotes.push(quoteInput.value)
+function storeInArray(imageURL, title, quote) {
+  images.push(imageURL)
+  titles.push(title)
+  quotes.push(quote)
 }
 
 function makePoster() {
   // createPoster(imageURL, title, quote)
   // posterImage.src = imageURL
   newPoster = createPoster(imageInput.value, titleInput.value, quoteInput.value)
-  // currentPoster = newPoster
+  currentPoster = newPoster
   posterImage.src = newPoster.imageURL
   posterTitle.innerText = newPoster.title
   posterQuote.innerText = newPoster.quote
-  storeInArray()
+  storeInArray(imageInput.value, titleInput.value, quoteInput.value)
   backToMain()
   event.preventDefault()
 }
