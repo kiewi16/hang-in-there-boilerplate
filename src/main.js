@@ -152,7 +152,7 @@ function randomizePoster() {
   var randomTitle = titles[titleIndex];
   var quotesIndex = getRandomIndex(quotes);
   var randomQuote = quotes[quotesIndex];
-  createPoster(randomImage, randomTitle, randomQuote);
+  currentPoster = createPoster(randomImage, randomTitle, randomQuote);
   posterImage.src = randomImage;
   posterTitle.innerText = randomTitle;
   posterQuote.innerText = randomQuote; 
@@ -168,12 +168,15 @@ function backToMain() {
 
 // make this function check for duplicates
 function savePoster() {
-  currentImage = currentPoster.imageURL
-  currentTitle = currentPoster.title
-  currentQuote = currentPoster.quote
+  savedPosters.push(currentPoster)
+  
+  // currentImage = currentPoster.imageURL
+  // currentTitle = currentPoster.title
+  // currentQuote = currentPoster.quote
 
-  checkArrays(currentImage, currentTitle, currentQuote)
-  storeInArray(currentImage, currentTitle, currentQuote)
+  // checkArrays(currentImage, currentTitle, currentQuote)
+  // storeInArray(currentImage, currentTitle, currentQuote)
+  // savedPosters.push(currentPoster)
 }
 
 function revealSavedPosters() {
@@ -182,22 +185,28 @@ function revealSavedPosters() {
 }
 
 function revealPosterCreation() {
-  // poster.classList.add('hidden')
   mainPoster.classList.add('hidden')
   form.classList.remove('hidden')
-  
 }
 
 function storeInArray(imageURL, title, quote) {
-  images.push(imageURL)
-  titles.push(title)
-  quotes.push(quote)
+  checkArrays(imageURL, title, quote)
+  if (imageExists === false) {
+    images.push(imageURL)
+  }
+  if (titleExists === false) {
+    titles.push(title)
+  }
+  if (quoteExists === false) {
+    quotes.push(quote)
+  }
 }
 
 function checkArrays(imageURL, title, quote) {
   imageExists = images.includes(imageURL)
   titleExists = titles.includes(title)
   quoteExists = quotes.includes(quote)
+  return imageExists
 }
 
 function makePoster() {
