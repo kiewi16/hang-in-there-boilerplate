@@ -168,7 +168,12 @@ function backToMain() {
 
 // make this function check for duplicates
 function savePoster() {
-  storeInArray(currentPoster.imageURL, currentPoster.title, currentPoster.quote)
+  currentImage = currentPoster.imageURL
+  currentTitle = currentPoster.title
+  currentQuote = currentPoster.quote
+
+  checkArrays(currentImage, currentTitle, currentQuote)
+  storeInArray(currentImage, currentTitle, currentQuote)
 }
 
 function revealSavedPosters() {
@@ -187,6 +192,12 @@ function storeInArray(imageURL, title, quote) {
   images.push(imageURL)
   titles.push(title)
   quotes.push(quote)
+}
+
+function checkArrays(imageURL, title, quote) {
+  imageExists = images.includes(imageURL)
+  titleExists = titles.includes(title)
+  quoteExists = quotes.includes(quote)
 }
 
 function makePoster() {
