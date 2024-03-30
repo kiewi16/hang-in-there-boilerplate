@@ -18,6 +18,8 @@ var imageInput = document.querySelector('#poster-image-url')
 var titleInput = document.querySelector('#poster-title')
 var quoteInput = document.querySelector('#poster-quote')
 
+var savedPostersGrid = document.querySelector('.saved-posters-grid')
+// var savedGrid = document.getElementsByClassName('.saved-posters-grid')
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -182,6 +184,7 @@ function savePoster() {
 function revealSavedPosters() {
   mainPoster.classList.add('hidden')
   savedPosterSection.classList.remove('hidden')
+  // populateSavedPosters()
 }
 
 function revealPosterCreation() {
@@ -222,4 +225,17 @@ function makePoster() {
   event.preventDefault()
 }
 
+function populateSavedPosters() {
+  for (var i = 0; i <= savedPosters.length; i++) {
+    var posterItem = savedPosters[i]
+    var miniPoster = document.createElement('div')
+    miniPoster.classList.add('grid-item')
+
+    posterItem.imageURL
+    posterItem.title
+    posterItem.quote
+
+    savedPostersGrid.appendChild(miniPoster)
+  }
+}
 // element.classList.contains('hidden')
