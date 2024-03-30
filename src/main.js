@@ -184,7 +184,7 @@ function savePoster() {
 function revealSavedPosters() {
   mainPoster.classList.add('hidden')
   savedPosterSection.classList.remove('hidden')
-  // populateSavedPosters()
+  populateSavedPosters()
 }
 
 function revealPosterCreation() {
@@ -230,10 +230,23 @@ function populateSavedPosters() {
     var posterItem = savedPosters[i]
     var miniPoster = document.createElement('div')
     miniPoster.classList.add('grid-item')
+    miniPoster.className = 'saved-posters-grid'
 
-    posterItem.imageURL
-    posterItem.title
-    posterItem.quote
+    var miniPosterImage = document.createElement('img')
+    miniPosterImage.src = posterItem.imageURL
+    miniPoster.appendChild(miniPosterImage)
+
+    var miniPosterTitle = document.createElement('h2')
+    miniPosterTitle.innerText = posterItem.title
+    miniPoster.appendChild(miniPosterTitle)
+
+    var miniPosterQuote = document.createElement('h4')
+    miniPosterQuote.innerText = posterItem.quote
+    miniPoster.appendChild(miniPosterQuote)
+
+    // posterItem.imageURL
+    // posterItem.title
+    // posterItem.quote
 
     savedPostersGrid.appendChild(miniPoster)
   }
