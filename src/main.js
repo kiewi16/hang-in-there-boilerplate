@@ -124,7 +124,7 @@ var currentPoster;
 
 showRandomButton.addEventListener('click', randomizePoster)
 savePosterButton.addEventListener('click', savePoster)
-makePosterButton.addEventListener('click', showMyPoster)
+makePosterButton.addEventListener('click', makePoster)
 showSavedButton.addEventListener('click', revealSavedPosters)
 showFormButton.addEventListener('click', revealPosterCreation)
 nevermindBackButton.addEventListener('click', backToMain)
@@ -190,10 +190,11 @@ function storeInArray() {
   quotes.push(quoteInput.value)
 }
 
-function showMyPoster() {
+function makePoster() {
   // createPoster(imageURL, title, quote)
   // posterImage.src = imageURL
   newPoster = createPoster(imageInput.value, titleInput.value, quoteInput.value)
+  // currentPoster = newPoster
   posterImage.src = newPoster.imageURL
   posterTitle.innerText = newPoster.title
   posterQuote.innerText = newPoster.quote
