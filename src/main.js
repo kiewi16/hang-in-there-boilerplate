@@ -20,7 +20,7 @@ var quoteInput = document.querySelector('#poster-quote')
 
 var savedPostersGrid = document.querySelector('.saved-posters-grid')
 // var savedGrid = document.getElementsByClassName('.saved-posters-grid')
-// var existingSavedGrid = document.querySelector('mini-poster')
+var existingSavedGrid = document.querySelector('mini-poster')
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -189,6 +189,7 @@ function savePoster() {
 function revealSavedPosters() {
   mainPoster.classList.add('hidden')
   savedPosterSection.classList.remove('hidden')
+  
   // populateSavedPosters()
 }
 
@@ -264,4 +265,3 @@ function populateSavedPosters() {
     savedPostersGrid.appendChild(miniPosterEntry)
   }
 }
-// element.classList.contains('hidden')
