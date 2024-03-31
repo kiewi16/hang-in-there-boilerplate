@@ -19,7 +19,6 @@ var titleInput = document.querySelector('#poster-title')
 var quoteInput = document.querySelector('#poster-quote')
 
 var savedPostersGrid = document.querySelector('.saved-posters-grid')
-// var savedGrid = document.getElementsByClassName('.saved-posters-grid')
 var existingMiniPoster = document.querySelector('mini-poster')
 
 // we've provided you with some data to work with 👇
@@ -152,16 +151,16 @@ function createPoster(imageURL, title, quote) {
 }
 
 function randomizePoster() {
-  var imageIndex = getRandomIndex(images);
-  var randomImage = images[imageIndex];
-  var titleIndex = getRandomIndex(titles);
-  var randomTitle = titles[titleIndex];
-  var quotesIndex = getRandomIndex(quotes);
-  var randomQuote = quotes[quotesIndex];
-  currentPoster = createPoster(randomImage, randomTitle, randomQuote);
-  posterImage.src = randomImage;
-  posterTitle.innerText = randomTitle;
-  posterQuote.innerText = randomQuote; 
+  var imageIndex = getRandomIndex(images)
+  var randomImage = images[imageIndex]
+  var titleIndex = getRandomIndex(titles)
+  var randomTitle = titles[titleIndex]
+  var quotesIndex = getRandomIndex(quotes)
+  var randomQuote = quotes[quotesIndex]
+  currentPoster = createPoster(randomImage, randomTitle, randomQuote)
+  posterImage.src = randomImage
+  posterTitle.innerText = randomTitle
+  posterQuote.innerText = randomQuote
 }
 
 window.addEventListener('load', function() {
@@ -200,13 +199,6 @@ function revealPosterCreation() {
   form.classList.remove('hidden')
 }
 
-// function checkArrays(imageURL, title, quote) {
-//   imageExists = images.includes(imageURL)
-//   titleExists = titles.includes(title)
-//   quoteExists = quotes.includes(quote)
-//   return imageExists
-// }
-
 function checkPosterArrays(imageURL, title, quote) {
   imageExists = images.includes(imageURL)
   titleExists = titles.includes(title)
@@ -231,6 +223,7 @@ function storeInArray(imageURL, title, quote) {
 }
 
 function makePoster() {
+  
   newPoster = createPoster(imageInput.value, titleInput.value, quoteInput.value)
   currentPoster = newPoster
   posterImage.src = newPoster.imageURL
