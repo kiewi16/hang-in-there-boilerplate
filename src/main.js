@@ -134,7 +134,7 @@ showFormButton.addEventListener('click', revealPosterCreation)
 nevermindBackButton.addEventListener('click', backToMain)
 backToMainButton.addEventListener('click', backToMain)
 
-// existingMiniPoster.addEventListener('dblclick', deletePosters)
+// existingMiniPoster.addEventListener('dblclick', deletePoster)
 
 
 // functions and event handlers go here 👇
@@ -271,7 +271,7 @@ function populateSavedPosters() {
   }
 }
 
-function deletePosters() {
+function deletePoster() {
 
 
 }
