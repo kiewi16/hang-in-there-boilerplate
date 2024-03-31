@@ -174,8 +174,10 @@ function backToMain() {
 
 // make this function check for duplicates
 function savePoster() {
+  if (!savedPosters.includes(currentPoster)) {
   savedPosters.push(currentPoster)
-  
+  }
+
   // currentImage = currentPoster.imageURL
   // currentTitle = currentPoster.title
   // currentQuote = currentPoster.quote
@@ -198,8 +200,25 @@ function revealPosterCreation() {
   form.classList.remove('hidden')
 }
 
+// function checkArrays(imageURL, title, quote) {
+//   imageExists = images.includes(imageURL)
+//   titleExists = titles.includes(title)
+//   quoteExists = quotes.includes(quote)
+//   return imageExists
+// }
+
+function checkPosterArrays(imageURL, title, quote) {
+  imageExists = images.includes(imageURL)
+  titleExists = titles.includes(title)
+  quoteExists = quotes.includes(quote)
+  checkedPosterArray = {
+    img: imageExists, title: titleExists, quote: quoteExists 
+  }
+  return checkedPosterArray
+}
+
 function storeInArray(imageURL, title, quote) {
-  checkArrays(imageURL, title, quote)
+  checkPosterArrays(imageURL, title, quote)
   if (imageExists === false) {
     images.push(imageURL)
   }
@@ -211,16 +230,7 @@ function storeInArray(imageURL, title, quote) {
   }
 }
 
-function checkArrays(imageURL, title, quote) {
-  imageExists = images.includes(imageURL)
-  titleExists = titles.includes(title)
-  quoteExists = quotes.includes(quote)
-  return imageExists
-}
-
 function makePoster() {
-  // createPoster(imageURL, title, quote)
-  // posterImage.src = imageURL
   newPoster = createPoster(imageInput.value, titleInput.value, quoteInput.value)
   currentPoster = newPoster
   posterImage.src = newPoster.imageURL
@@ -234,9 +244,6 @@ function makePoster() {
 function populateSavedPosters() {
   for (var i = 0; i <= savedPosters.length - 1; i++) {
     var posterItem = savedPosters[i]
-    // var miniPosterGrid = document.createElement('div')
-    // miniPoster.classList.add('grid-item')
-    // miniPosterGrid.className = 'saved-posters-grid'
 
     var miniPosterEntry = document.createElement('div')
     miniPosterEntry.className = 'mini-poster'
@@ -244,12 +251,9 @@ function populateSavedPosters() {
     var miniPosterImage = document.createElement('img')
     miniPosterImage.className = 'mini-poster img'
     miniPosterImage.src = posterItem.imageURL
-    // miniPosterImage.innerHTML = `<p><h2>${posterItem.title}</h2><h4>${posterItem.quote}</h4></p>`
     miniPosterEntry.appendChild(miniPosterImage)
 
     var miniPosterText = document.createElement('p')
-    // miniPosterText.className = 'mini-poster h2'
-    // miniPosterText.src = posterItem.imageURL
     miniPosterText.innerHTML = `<h2>${posterItem.title}</h2><h4>${posterItem.quote}</h4>`
     miniPosterEntry.appendChild(miniPosterText)
 
