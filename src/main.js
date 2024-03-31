@@ -226,9 +226,9 @@ function makePoster() {
 }
 
 function populateSavedPosters() {
-  for (var i = 0; i <= savedPosters.length; i++) {
+  for (var i = 0; i <= savedPosters.length - 1; i++) {
     var posterItem = savedPosters[i]
-    var miniPosterGrid = document.createElement('div')
+    // var miniPosterGrid = document.createElement('div')
     // miniPoster.classList.add('grid-item')
     // miniPosterGrid.className = 'saved-posters-grid'
 
