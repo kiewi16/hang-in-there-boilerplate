@@ -20,7 +20,7 @@ var quoteInput = document.querySelector('#poster-quote')
 
 var savedPostersGrid = document.querySelector('.saved-posters-grid')
 // var savedGrid = document.getElementsByClassName('.saved-posters-grid')
-var existingSavedGrid = document.querySelector('mini-poster')
+var existingMiniPoster = document.querySelector('mini-poster')
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -134,6 +134,8 @@ showFormButton.addEventListener('click', revealPosterCreation)
 nevermindBackButton.addEventListener('click', backToMain)
 backToMainButton.addEventListener('click', backToMain)
 
+// existingMiniPoster.addEventListener('dblclick', deletePosters)
+
 
 // functions and event handlers go here 👇
 // (we've provided two to get you started)
@@ -191,8 +193,6 @@ function savePoster() {
 function revealSavedPosters() {
   mainPoster.classList.add('hidden')
   savedPosterSection.classList.remove('hidden')
-  
-  // populateSavedPosters()
 }
 
 function revealPosterCreation() {
@@ -242,6 +242,7 @@ function makePoster() {
 }
 
 function populateSavedPosters() {
+  
   for (var i = 0; i <= savedPosters.length - 1; i++) {
     var posterItem = savedPosters[i]
 
@@ -268,4 +269,9 @@ function populateSavedPosters() {
 
     savedPostersGrid.appendChild(miniPosterEntry)
   }
+}
+
+function deletePosters() {
+
+
 }
