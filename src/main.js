@@ -20,6 +20,7 @@ var quoteInput = document.querySelector('#poster-quote')
 
 var savedPostersGrid = document.querySelector('.saved-posters-grid')
 // var savedGrid = document.getElementsByClassName('.saved-posters-grid')
+// var existingSavedGrid = document.querySelector('mini-poster')
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -128,6 +129,7 @@ showRandomButton.addEventListener('click', randomizePoster)
 savePosterButton.addEventListener('click', savePoster)
 makePosterButton.addEventListener('click', makePoster)
 showSavedButton.addEventListener('click', revealSavedPosters)
+// showSavedButton.addEventListener('click', populateSavedPosters)
 showFormButton.addEventListener('click', revealPosterCreation)
 nevermindBackButton.addEventListener('click', backToMain)
 backToMainButton.addEventListener('click', backToMain)
@@ -160,7 +162,9 @@ function randomizePoster() {
   posterQuote.innerText = randomQuote; 
 }
 
-randomizePoster(); 
+window.addEventListener('load', function() {
+  randomizePoster()
+}); 
 
 function backToMain() {
   mainPoster.classList.remove('hidden')
@@ -179,12 +183,13 @@ function savePoster() {
   // checkArrays(currentImage, currentTitle, currentQuote)
   // storeInArray(currentImage, currentTitle, currentQuote)
   // savedPosters.push(currentPoster)
+  populateSavedPosters()
 }
 
 function revealSavedPosters() {
   mainPoster.classList.add('hidden')
   savedPosterSection.classList.remove('hidden')
-  populateSavedPosters()
+  // populateSavedPosters()
 }
 
 function revealPosterCreation() {
