@@ -222,7 +222,11 @@ function makePoster() {
 }
 
 function populateSavedPosters() {
-  
+
+while (savedPostersGrid.firstChild) {
+  savedPostersGrid.removeChild(savedPostersGrid.firstChild)
+}
+
   for (var i = 0; i <= savedPosters.length - 1; i++) {
     var posterItem = savedPosters[i]
 
