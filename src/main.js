@@ -230,22 +230,22 @@ function populateSavedPosters() {
     var posterItem = savedPosters[i]
     var miniPosterGrid = document.createElement('div')
     // miniPoster.classList.add('grid-item')
-    miniPosterGrid.className = 'saved-posters-grid'
+    // miniPosterGrid.className = 'saved-posters-grid'
 
-    // var miniPoster = document.createElement('div')
-    // miniPoster.className = 'mini-poster'
+    var miniPosterEntry = document.createElement('div')
+    miniPosterEntry.className = 'mini-poster'
 
     var miniPosterImage = document.createElement('img')
     miniPosterImage.className = 'mini-poster img'
     miniPosterImage.src = posterItem.imageURL
     // miniPosterImage.innerHTML = `<p><h2>${posterItem.title}</h2><h4>${posterItem.quote}</h4></p>`
-    miniPosterGrid.appendChild(miniPosterImage)
+    miniPosterEntry.appendChild(miniPosterImage)
 
     var miniPosterText = document.createElement('p')
     // miniPosterText.className = 'mini-poster h2'
     // miniPosterText.src = posterItem.imageURL
     miniPosterText.innerHTML = `<h2>${posterItem.title}</h2><h4>${posterItem.quote}</h4>`
-    miniPosterGrid.appendChild(miniPosterText)
+    miniPosterEntry.appendChild(miniPosterText)
 
     // var miniPosterQuote = document.createElement('p')
     // miniPosterQuote.className = 'mini-poster h4'
@@ -256,7 +256,7 @@ function populateSavedPosters() {
     // posterItem.title
     // posterItem.quote
 
-    savedPostersGrid.appendChild(miniPosterGrid)
+    savedPostersGrid.appendChild(miniPosterEntry)
   }
 }
 // element.classList.contains('hidden')
