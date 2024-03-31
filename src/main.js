@@ -128,7 +128,6 @@ showRandomButton.addEventListener('click', randomizePoster)
 savePosterButton.addEventListener('click', savePoster)
 makePosterButton.addEventListener('click', makePoster)
 showSavedButton.addEventListener('click', revealSavedPosters)
-// showSavedButton.addEventListener('click', populateSavedPosters)
 showFormButton.addEventListener('click', revealPosterCreation)
 nevermindBackButton.addEventListener('click', backToMain)
 backToMainButton.addEventListener('click', backToMain)
@@ -174,14 +173,6 @@ function savePoster() {
   if (!savedPosters.includes(currentPoster)) {
   savedPosters.push(currentPoster)
   }
-
-  // currentImage = currentPoster.imageURL
-  // currentTitle = currentPoster.title
-  // currentQuote = currentPoster.quote
-
-  // checkArrays(currentImage, currentTitle, currentQuote)
-  // storeInArray(currentImage, currentTitle, currentQuote)
-  // savedPosters.push(currentPoster)
   populateSavedPosters()
 }
 
