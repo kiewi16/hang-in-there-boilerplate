@@ -123,7 +123,7 @@ var savedPosters = [];
 var currentPoster;
 
 // event listeners go here 👇
-
+window.addEventListener('load', randomizePoster)
 showRandomButton.addEventListener('click', randomizePoster)
 savePosterButton.addEventListener('click', savePoster)
 makePosterButton.addEventListener('click', makePoster)
@@ -162,10 +162,6 @@ function randomizePoster() {
   posterTitle.innerText = randomTitle
   posterQuote.innerText = randomQuote
 }
-
-window.addEventListener('load', function() {
-  randomizePoster()
-}); 
 
 function backToMain() {
   mainPoster.classList.remove('hidden')
